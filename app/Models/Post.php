@@ -8,6 +8,7 @@ use Illuminate\Database\Eloquent\Relations\BelongsTo;
 
 class Post extends Model {
     use HasFactory;
+    protected $with = ['author', 'category'];
 
     public function category(): BelongsTo{
         return $this->belongsTo(Category::class);
