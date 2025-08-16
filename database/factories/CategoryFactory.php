@@ -17,10 +17,11 @@ class CategoryFactory extends Factory
      */
     public function definition(): array
     {
-        $name = fake()->sentence(1);
+        $name = fake()->unique()->sentence(1);
         return [
             "name" => $name,
             "slug" => Str::slug($name),
+            "color"=> fake()->hexColor(),
         ];
     }
 }

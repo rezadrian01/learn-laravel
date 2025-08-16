@@ -23,7 +23,7 @@ class PostFactory extends Factory
         $title = fake()->sentence(5);
         return [
             "title" => $title,
-            "body" => fake()->text,
+            "body" => fake()->text(10000),
             "slug" => Str::slug($title),
 //            "author" => fake()->name(),
             "category_id" => Category::factory(),
